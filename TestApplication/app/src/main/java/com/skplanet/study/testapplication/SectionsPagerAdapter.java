@@ -35,9 +35,9 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         switch(position) {
             case PAGE_ID_RETROFIT:
-                return RetrofitTestFragment.newInstance(null);
+                return RetrofitTestFragment.newInstance();
             case PAGE_ID_GRID:
-                return GridFragment.newInstance(null);
+                return new GridFragment(null);
             default:
                 return PlaceholderFragment.newInstance(position + 1);
         }

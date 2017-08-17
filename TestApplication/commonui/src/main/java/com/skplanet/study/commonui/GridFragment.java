@@ -14,7 +14,7 @@ import com.skplanet.study.commonui.AsymmetricGridView.DefaultListAdapter;
 import com.skplanet.study.commonui.AsymmetricGridView.DemoAdapter;
 import com.skplanet.study.commonui.AsymmetricGridView.DemoItem;
 import com.skplanet.study.commonui.AsymmetricGridView.DemoUtils;
-import com.skplanet.study.commonui.common.IUIFragment;
+import com.skplanet.study.commonui.common.IName;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ import java.util.List;
  * Created by 1002216 on 2017. 8. 14..
  */
 
-public class GridFragment extends Fragment implements AdapterView.OnItemClickListener, IUIFragment {
+public class GridFragment extends Fragment implements AdapterView.OnItemClickListener {
 
 
     private AsymmetricGridView listView;
@@ -30,21 +30,14 @@ public class GridFragment extends Fragment implements AdapterView.OnItemClickLis
     private List<DemoItem> items;
 
     public GridFragment() {
+        this(null);
     }
 
-    /**
-     * Returns a new instance of this fragment for the given section
-     * number.
-     */
-    public static GridFragment newInstance(List<DemoItem> items) {
-        GridFragment fragment = new GridFragment();
-
-        fragment.setItems(items);
-
-        return fragment;
+    public GridFragment(List<DemoItem> items) {
+        this.items = items;
     }
 
-    private void setItems(List<DemoItem> items) {
+    public void setItems(List<DemoItem> items) {
         this.items = items;
 
     }
@@ -86,7 +79,7 @@ public class GridFragment extends Fragment implements AdapterView.OnItemClickLis
 
     }
 
-    @Override
+
     public static String getName() {
         return "";
     }
